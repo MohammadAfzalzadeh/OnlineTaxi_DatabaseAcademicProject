@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="432.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainPage">
+   <children>
+
+      <Text layoutX="80.0" layoutY="40.0" text="به اپلیکیشن تاکسی آنلاین خوش آمدید" wrappingWidth="284.99996757507336" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+      <Label layoutX="232.0" layoutY="84.0" text="شماره تلفن : " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+      <TextField fx:id="userName" layoutX="19.0" layoutY="79.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+      <Label layoutX="251.0" layoutY="131.0" text="رمز عبور :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+      <PasswordField fx:id="passwordField" layoutX="21.0" layoutY="130.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+      <Button layoutX="26.0" layoutY="182.0" onAction="#handleSubmitButtonAction" prefHeight="26.0" prefWidth="69.0" text="ورود" />
+
+      <Button layoutX="121.0" layoutY="182.0" onAction="#addPass" prefHeight="26.0" prefWidth="123.0" text="ثبت مسافر جدید" />
+
+
+      <Text fx:id="actiontarget" layoutX="75.0" layoutY="237.0" wrappingWidth="272.99999809265137" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+   </children>
+</AnchorPane>

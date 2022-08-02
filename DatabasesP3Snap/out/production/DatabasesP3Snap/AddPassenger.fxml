@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="381.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddPassenger">
+   <children>
+      <Box depth="100" drawMode="LINE" height="300" layoutX="185.0" layoutY="183.0" width="330" />
+      <Text layoutX="273.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام کامل:" />
+      <TextField fx:id="name" layoutX="78.0" layoutY="75.0" />
+      <Text layoutX="272.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شماره تلفن :" />
+      <TextField fx:id="phone" layoutX="78.0" layoutY="119.0" />
+      <Text layoutX="272.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="جنسیت :" />
+      <ComboBox fx:id="gender" layoutX="78.0" layoutY="162.0" prefWidth="150.0" />
+      <Text layoutX="274.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز عبور :" />
+      <PasswordField fx:id="pass" layoutX="79.0" layoutY="210.0" />
+      <Text layoutX="269.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کد معرف :" />
+      <TextField fx:id="iden" layoutX="79.0" layoutY="254.0" />
+      <Text layoutX="139.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ثبت نام مسافر" />
+      <Button layoutX="77.0" layoutY="294.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="107.0" text="ثبت اطلاعات" />
+      <Button layoutX="188.0" layoutY="294.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="107.0" text="صفحه ورود" />
+   </children>
+</AnchorPane>

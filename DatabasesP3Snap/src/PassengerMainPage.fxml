@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import Models.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PassengerMainPage">
+<TabPane fx:id="tabPane" prefHeight="554.0" prefWidth="405.0" tabClosingPolicy="UNAVAILABLE">
+   <tabs>
+      <Tab fx:id="main" text=" درخواست سفر " onSelectionChanged="#tabChangeMain">
+         <content>
+
+
+            <AnchorPane prefHeight="600" prefWidth="423.0">
+               <children>
+                  <AnchorPane fx:id="setTrip" prefHeight="526.0" prefWidth="406.0">
+                     <children>
+                        <Box depth="100" drawMode="LINE" height="170" layoutX="288.0" layoutY="137.0" width="130" />
+                        <Text layoutX="305.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="مبدا :" wrappingWidth="32.87928771972656" />
+                        <Text layoutX="241.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X :" fx:id="x_src_txt" />
+                        <Text fx:id="y_src_txt" layoutX="241.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y :" />
+                        <TextField layoutX="272.0" layoutY="95.0" prefHeight="26.0" prefWidth="49.0" fx:id="x_src" />
+                        <TextField fx:id="y_src" layoutX="272.0" layoutY="131.0" prefHeight="26.0" prefWidth="49.0" />
+                        <Box depth="100" drawMode="LINE" height="170" layoutX="105.0" layoutY="136.0" width="130" />
+                        <Text layoutX="113.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="مقصد :" wrappingWidth="49.59999999999991" />
+                        <Text layoutX="66.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X :" />
+                        <Text layoutX="66.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y :" />
+                        <TextField layoutX="97.0" layoutY="94.0" prefHeight="26.0" prefWidth="49.0" fx:id="x_dst" />
+                        <TextField fx:id="y_dst" layoutX="97.0" layoutY="130.0" prefHeight="26.0" prefWidth="49.0" />
+                        <Text layoutX="262.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کد تخفیف : " />
+                        <TextField fx:id="discountCode" layoutX="91.0" layoutY="246.0" prefHeight="26.0" prefWidth="150.0" />
+                        <Text layoutX="262.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شیوه پرداخت :" />
+                        <ComboBox fx:id="payment" layoutX="91.0" layoutY="303.0" prefWidth="150.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <PaymentMethod fx:value="BY_CREDIT" />
+                                 <PaymentMethod fx:value="BY_MONEY" />
+                              </FXCollections>
+                           </items>
+                           <value>
+                              <PaymentMethod fx:value="BY_CREDIT" />
+                           </value>
+                        </ComboBox>
+                        <Button fx:id="subTaxi" alignment="CENTER" layoutX="112.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="38.0" prefWidth="180" text="درخواست تاکسی آنلاین" />
+                        <Button fx:id="search" layoutX="26.0" layoutY="355.0" onAction="#showStatusOfTrip" text="برسی سفر" visible="false" />
+                           <CheckBox fx:id="maqCh" layoutX="60.0" layoutY="21.0" mnemonicParsing="false" text="مکان ذخیره شده2" />
+                           <CheckBox fx:id="mabCh" layoutX="237.0" layoutY="21.0" mnemonicParsing="false" text="مکان ذخیره شده1" />
+                           <ComboBox fx:id="comboMaq" layoutX="50.0" layoutY="174.0" prefHeight="26.0" prefWidth="103.0"  />
+                           <ComboBox fx:id="comboMab" layoutX="239.0" layoutY="174.0" prefHeight="26.0" prefWidth="103.0" />
+                     </children>
+                  </AnchorPane>
+                                    <HBox fx:id="Runing" layoutX="70.0" layoutY="435.0" prefHeight="38.0" prefWidth="273.0" spacing="10" visible="false">
+                     <children>
+                        <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cansel" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: crimson;" text="لغو در خواست " textAlignment="CENTER" textFill="#acdca7" />
+                        <Text fx:id="msg" fill="crimson" text="در حال پیدا کردن سفیر " />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+
+
+
+         </content>
+      </Tab>
+      <Tab fx:id="tab_SavedLoc" onSelectionChanged="#tabChange" text=" مکان های ذخیره شده ">
+         <AnchorPane prefHeight="450.0" prefWidth="323.0">
+            <children>
+               <ScrollPane layoutX="27.0" layoutY="31.0" prefHeight="274.0" prefWidth="353.0">
+                  <content>
+                     <VBox fx:id="savedLocationPane" alignment="CENTER" spacing="30">
+
+                     </VBox>
+                  </content>
+               </ScrollPane>
+               <Box depth="100" drawMode="LINE" height="200" layoutX="203.0" layoutY="413.0" width="350" />
+               <Text layoutX="135.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="افزودن مکان ذخیره شده" textAlignment="RIGHT" />
+               <Text layoutX="228.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موقعیت مکانی طولی : " />
+               <TextField layoutX="42.0" layoutY="344.0" fx:id="x_sl" />
+               <Text layoutX="233.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موقعیت مکانی عرضی :" />
+               <TextField fx:id="y_sl" layoutX="42.0" layoutY="377.0" />
+               <TextField fx:id="name_sl" layoutX="42.0" layoutY="410.0" />
+               <Text layoutX="233.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام مکان :" textAlignment="RIGHT" />
+               <TextField fx:id="addr_sl" layoutX="42.0" layoutY="445.0" />
+               <Text layoutX="231.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="توضیحات برای راننده :" textAlignment="RIGHT" />
+               <Button layoutX="117.0" layoutY="480.0" mnemonicParsing="false" onAction="#addSavedLoc" prefHeight="26.0" prefWidth="176.0" text="ثبت مکان" />
+            </children>
+         </AnchorPane>
+
+      </Tab>
+      <Tab fx:id="tab_finishTrip" onSelectionChanged="#tabChangeTrip" text=" سفر های انجام شده ">
+         <AnchorPane prefHeight="450.0" prefWidth="323.0">
+         <children>
+         <ScrollPane layoutX="27.0" layoutY="31.0" prefHeight="274.0" prefWidth="353.0">
+            <content>
+               <VBox fx:id="TripsPane" alignment="CENTER" spacing="30">
+
+               </VBox>
+            </content>
+         </ScrollPane>
+         </children>
+         </AnchorPane>
+      </Tab>
+   </tabs>
+</TabPane>
+
+</AnchorPane>

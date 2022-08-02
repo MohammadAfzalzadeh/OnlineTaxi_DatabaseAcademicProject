@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DriverMainPage">
+
+    <TabPane fx:id="tabPane" prefHeight="554.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="tab_Search" onSelectionChanged="#tabChange" text="یافتن مسافر">
+                <AnchorPane prefHeight="450.0" prefWidth="323.0">
+                    <children>
+                    <ScrollPane layoutX="34.0" layoutY="44.0" prefHeight="291.0" prefWidth="531.0">
+                        <content>
+                            <VBox fx:id="tripAccessPane" alignment="CENTER" spacing="30">
+
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                   <Button layoutX="482.0" layoutY="348.0" onAction="#refresh" text="به روز رسانی " />
+                        <HBox fx:id="Runing" layoutX="71.0" layoutY="384.0" prefHeight="38.0" prefWidth="457.0" spacing="10" visible="true">
+                            <children>
+                                <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#finish" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: blue;" text="پایان سفر  " textAlignment="CENTER" textFill="#acdca7" />
+                                <Text fx:id="msg" fill="crimson" text=" در سفر " />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </Tab>
+
+            <Tab fx:id="tab_finishTrip" onSelectionChanged="#tabChangeTrip" text=" سفر های انجام شده ">
+                <AnchorPane prefHeight="450.0" prefWidth="323.0">
+                    <children>
+                        <ScrollPane layoutX="27.0" layoutY="31.0" prefHeight="274.0" prefWidth="548.0">
+                            <content>
+                                <VBox fx:id="TripsPane" alignment="CENTER" spacing="30">
+
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </Tab>
+
+        </tabs>
+    </TabPane>
+</AnchorPane>
